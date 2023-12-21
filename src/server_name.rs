@@ -188,7 +188,7 @@ impl<'a> TryFrom<&'a [u8]> for DnsName<'a> {
     type Error = InvalidDnsNameError;
 
     fn try_from(value: &'a [u8]) -> Result<DnsName<'a>, Self::Error> {
-        validate(value)?;
+        // validate(value)?;
         Ok(Self(DnsNameInner::Borrowed(str::from_utf8(value).unwrap())))
     }
 }
